@@ -499,7 +499,7 @@
   <!-- web.debug.config -->
   <!-- web.release.config -->
   <!-- CHANGES MADE DIRECTLY TO THE web.config WILL BE OVERWRITTEN -->
-  <Target Name="AfterBuild">
-    <TransformXml Source="Web.Base.config" Transform="Web.$(Configuration).config" Destination="Web.config" />
-  </Target>
+    <Target Name="AfterBuild">
+        <TransformXml Source="Web.Base.config" Transform="$(ProjectConfigTransformFileName)" Destination="Web.config" />
+    </Target>
 </Project>
