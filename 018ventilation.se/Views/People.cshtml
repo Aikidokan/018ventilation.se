@@ -1,5 +1,5 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.People>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<_018ventilation.se.Models.ContentModels.People>
+@using ContentModels = _018ventilation.se.Models.ContentModels;
 @{
     Layout = "Master.cshtml";
 }
@@ -27,8 +27,9 @@
         </nav>
         -->
         <div class="employee-grid">
-            @foreach (ContentModels.Person person in Model.Content.Children)
+            @foreach (var publishedContent in Model.Content.Children)
             {
+                var person = (ContentModels.Person) publishedContent;
 
                 <div class="employee-grid__item">
                     <div class="employee-grid__item__image" style="background-image: url('@person.Photo.Url')"></div>
@@ -38,12 +39,12 @@
                         {
                             <a href="mailto:@person.Email" class="employee-grid__item__email">@person.Email</a>
                         }
-                        <div class="employee-grid__item__contact">
+                        @*<div class="employee-grid__item__contact">
                             @SocialLink(person.FacebookUsername, "Facebook")
                             @SocialLink(person.TwitterUsername, "Twitter")
                             @SocialLink(person.LinkedInUsername, "LinkedIn")
                             @SocialLink(person.InstagramUsername, "Instagram")
-                        </div>
+                        </div>*@
                     </div>
                 </div>
             }

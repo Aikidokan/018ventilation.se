@@ -1,5 +1,12 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-<section class="section section--themed section--header section--content-center-bottom">
+﻿@using System.Configuration
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var bgImage = Umbraco.TypedMedia(Model.Content.Site().GetPropertyValue<int>("HeroBackgroundImage")).Url;
+
+}
+<section class="section section--themed background-image-full overlay overlay--dark section--header section--content-center-bottom"
+         style="background-image: url('@bgImage'); background-position: top;">
+     
     <div class="section__hero-content">
         <h1 class="no-air">@Model.Content.GetPropertyValue("PageTitle")</h1>
     </div>

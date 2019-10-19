@@ -1,0 +1,97 @@
+{
+  "Id": "cb32afb5-d3ae-4afb-9d3d-3761bbbf0971",
+  "Path": [
+    "3d634e15-7d15-45fa-a8a9-12838fa3a345",
+    "cb32afb5-d3ae-4afb-9d3d-3761bbbf0971"
+  ],
+  "Alias": "contact_us_alias",
+  "Name": "contact_us",
+  "Fields": [
+    {
+      "Id": "9fbdd7ee-a3df-4253-9293-2400459dca7a",
+      "Alias": "name",
+      "Name": "name",
+      "Label": "Namn",
+      "Category": "Standard",
+      "Validations": [],
+      "MetaInfo": null,
+      "FieldConfiguration": "{}",
+      "TypeId": "17906580-86ea-440b-bc30-9e1b099f803b",
+      "IsTransitory": false,
+      "IsServerSideOnly": false,
+      "IsHidden": false,
+      "IsStored": true
+    },
+    {
+      "Id": "4174db5f-c2f0-46db-b7ea-c1965430dcec",
+      "Alias": "email",
+      "Name": "email",
+      "Label": "E-post",
+      "Category": "Standard",
+      "Validations": [],
+      "MetaInfo": null,
+      "FieldConfiguration": "{}",
+      "TypeId": "17906580-86ea-440b-bc30-9e1b099f803b",
+      "IsTransitory": false,
+      "IsServerSideOnly": false,
+      "IsHidden": false,
+      "IsStored": true
+    },
+    {
+      "Id": "daae490f-4fe2-473e-ae97-632b4ad2c4fb",
+      "Alias": "cell",
+      "Name": "cell",
+      "Label": "Mobil",
+      "Category": "Standard",
+      "Validations": [],
+      "MetaInfo": null,
+      "FieldConfiguration": "{}",
+      "TypeId": "17906580-86ea-440b-bc30-9e1b099f803b",
+      "IsTransitory": false,
+      "IsServerSideOnly": false,
+      "IsHidden": false,
+      "IsStored": true
+    },
+    {
+      "Id": "8507c098-fa10-4149-813f-e270c1efd935",
+      "Alias": "message",
+      "Name": "message",
+      "Label": "Meddelande",
+      "Category": "Standard",
+      "Validations": [],
+      "MetaInfo": null,
+      "FieldConfiguration": "{}",
+      "TypeId": "9da84359-4d0b-4944-9144-9f8ccae7a4da",
+      "IsTransitory": false,
+      "IsServerSideOnly": false,
+      "IsHidden": false,
+      "IsStored": true
+    },
+    {
+      "Id": "3aced0df-80fd-4a02-b427-a29a6cb89e9e",
+      "Alias": "submit",
+      "Name": "submit",
+      "Label": "Skicka",
+      "Category": "Standard",
+      "Validations": [],
+      "MetaInfo": null,
+      "FieldConfiguration": "{\r\n  \"buttonKind\": \"Submit\"\r\n}",
+      "TypeId": "cde8565c-5e92-4112-9a1f-7ffa1940c53c",
+      "IsTransitory": true,
+      "IsServerSideOnly": false,
+      "IsHidden": false,
+      "IsStored": true
+    }
+  ],
+  "Handlers": [
+    {
+      "Id": "478e82ea-4ca8-4c4a-aac0-537472b8ae78",
+      "Alias": "contact_store",
+      "Name": "contact_store",
+      "Enabled": true,
+      "HandlerConfiguration": "{}",
+      "TypeId": "238ea920-71f4-4d8c-9cc4-33d7181c9c46"
+    }
+  ],
+  "MetaInfo": null
+}

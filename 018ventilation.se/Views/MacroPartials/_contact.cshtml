@@ -1,0 +1,118 @@
+﻿@using _018ventilation.se.Controllers;
+@using _018ventilation.se.Models;
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@if (TempData["CustomMessage"] != null)
+{
+    @TempData["CustomMessage"]
+
+}
+else
+{
+    <div id="responsediv"></div>
+    using (Ajax.BeginForm("SendMessage", "Contact", new AjaxOptions
+    {
+         HttpMethod = "POST",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "responsediv",
+        OnFailure = "ShowError()",
+        OnSuccess = "ShowSuccess()",
+        OnBegin = "empty()"
+    }))
+    {
+var model = new ContactModel();
+    <style>
+        #indetext {
+            visibility: hidden;
+        }
+        .indetext{
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+    </style>
+        <div class="compat-msg">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+            <br style="clear:both">
+            <h3 style="margin-bottom: 25px; text-align: center;">Kontakta oss</h3>
+            <div class="form-group">
+              
+                @Html.TextBoxFor(c => model.FullName, new { placeholder = "Namn", @class = "form-control" })
+            </div>
+            <div class="form-group">
+              
+                @Html.TextBoxFor(c => model.Email, new { placeholder = "E-post", @class = "form-control" })
+            </div>
+            <div class="form-group">
+               
+                @Html.TextBoxFor(c => model.Cell, new { placeholder = "Mobil", @class = "form-control" })
+            </div>
+            <div class="form-group">
+               
+                @Html.TextAreaFor(c => model.Comment, new {  @rows = 7, @class = "form-control" })
+            </div>
+        <input type="submit" value="Skicka" id="sub" />
+        <div class="indetext" id="indetext"><input name="email_add" type="text" id="field82" />
+        </div>
+        </div>
+    }
+}
+<script>
+    function ShowError() {
+        $("#status").removeClass();
+        $("#status").addClass("alert alert-error");
+        $("#status").html("<strong>Fel!</strong> Något gick fel. Var vänlig försök senare.");
+    }
+
+    function ShowSuccess() {
+        $("#target").removeClass();
+        $('#responsediv').delay(300).slideDown();
+        $('#form0').slideUp();
+        $("#target").addClass("alert alert-success");
+        $("#email_add").val('');
+        document.getElementById("sub").disabled = false;
+
+    }
+    function empty() {
+        var emailadd = $("#field82").val();
+        if (emailadd !== "") {
+            document.getElementById("sub").disabled = false;
+            return false;
+        } else {
+            document.getElementById("sub").disabled = true; 
+            return true;
+        };
+    }
+    $('input[type=submit]').one('submit',
+        function() {
+            $(this).attr('disabled', 'disabled');
+        });
+</script>
+<!--
+
+
+<form role="form" class="compat-msg">
+    <br style="clear:both">
+    <h3 style="margin-bottom: 25px; text-align: center;">Kontakta oss</h3>
+    <div class="form-group">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Namn" required>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" id="email" name="email" placeholder="Epost" required>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobil" required>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" id="subject" name="subject" placeholder="Ämne" required>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" type="textarea" id="message" placeholder="Meddelande" maxlength="140" rows="7"></textarea>
+
+    </div>
+
+    <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Skicka</button>
+</form>
+
+-->

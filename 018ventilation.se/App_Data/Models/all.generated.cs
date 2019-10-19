@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c73f0003b243f624")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4540278854c6c974")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -46,6 +46,9 @@ namespace Umbraco.Web.PublishedContentModels
 	{
 		/// <summary>Content</summary>
 		Newtonsoft.Json.Linq.JToken BodyText { get; }
+
+		/// <summary>HeroBackgroundImage</summary>
+		IPublishedContent HeroBackgroundImage { get; }
 
 		/// <summary>Page Title</summary>
 		string PageTitle { get; }
@@ -87,6 +90,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Content</summary>
 		public static Newtonsoft.Json.Linq.JToken GetBodyText(IContentBase that) { return that.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("bodyText"); }
+
+		///<summary>
+		/// HeroBackgroundImage
+		///</summary>
+		[ImplementPropertyType("heroBackgroundImage")]
+		public IPublishedContent HeroBackgroundImage
+		{
+			get { return GetHeroBackgroundImage(this); }
+		}
+
+		/// <summary>Static getter for HeroBackgroundImage</summary>
+		public static IPublishedContent GetHeroBackgroundImage(IContentBase that) { return that.GetPropertyValue<IPublishedContent>("heroBackgroundImage"); }
 
 		///<summary>
 		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
@@ -435,6 +450,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// HeroBackgroundImage
+		///</summary>
+		[ImplementPropertyType("heroBackgroundImage")]
+		public IPublishedContent HeroBackgroundImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetHeroBackgroundImage(this); }
+		}
+
+		///<summary>
 		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
 		///</summary>
 		[ImplementPropertyType("pageTitle")]
@@ -711,6 +735,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// HeroBackgroundImage
+		///</summary>
+		[ImplementPropertyType("heroBackgroundImage")]
+		public IPublishedContent HeroBackgroundImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetHeroBackgroundImage(this); }
+		}
+
+		///<summary>
 		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
 		///</summary>
 		[ImplementPropertyType("pageTitle")]
@@ -788,6 +821,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public Newtonsoft.Json.Linq.JToken BodyText
 		{
 			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetBodyText(this); }
+		}
+
+		///<summary>
+		/// HeroBackgroundImage
+		///</summary>
+		[ImplementPropertyType("heroBackgroundImage")]
+		public IPublishedContent HeroBackgroundImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetHeroBackgroundImage(this); }
 		}
 
 		///<summary>
@@ -1091,6 +1133,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public Newtonsoft.Json.Linq.JToken BodyText
 		{
 			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetBodyText(this); }
+		}
+
+		///<summary>
+		/// HeroBackgroundImage
+		///</summary>
+		[ImplementPropertyType("heroBackgroundImage")]
+		public IPublishedContent HeroBackgroundImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentBase.GetHeroBackgroundImage(this); }
 		}
 
 		///<summary>
